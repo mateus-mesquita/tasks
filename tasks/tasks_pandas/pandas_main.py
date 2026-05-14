@@ -42,3 +42,4 @@ class PandasCSV():
 
 
     
+resultado = PandasCSV().csv_silver("12_IQVIADEZEMBRO2025CSV.csv")
