@@ -15,7 +15,6 @@ class PandasReader:
             return dados
         except Exception as e:
             rprint(f"[bold red]Erro ao carregar arquivo csv:[/bold red] [yellow]{e}[/yellow]")
-
     
     def excel(self, path: str, sheet_name:str = None) -> pd.DataFrame:
         try:
