@@ -1,4 +1,5 @@
 import pandas as pd
+from rich import print as rprint
 
 # Alterando a lógica para classes
 class PandasReader:  
@@ -13,18 +14,19 @@ class PandasReader:
             )
             return dados
         except Exception as e:
-            print(f"Erro ao carregar arquivo csv: {e}")
+            rprint(f"[bold red]Erro ao carregar arquivo csv:[/bold red] [yellow]{e}[/yellow]")
+
     
     def excel(self, path: str, sheet_name:str = None) -> pd.DataFrame:
         try:
             dados = pd.read_excel(path, sheet_name=sheet_name)
             return dados
         except Exception as e:
-            print(f"Erro ao carregar arquivo excel: {e}")
+            rprint(f"[bold red]Erro ao carregar arquivo excel:[/bold red] [yellow]{e}[/yellow]")
     
     def parquet(self, path: str) -> pd.DataFrame:
         try:
             dados = pd.read_parquet(path)
             return dados
         except Exception as e:
-            print(f"Erro ao carregar arquivo parquet: {e}")
+            rprint(f"[bold red]Erro ao carregar arquivo parquet:[/bold red] [yellow]{e}[/yellow]")
